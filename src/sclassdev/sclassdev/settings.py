@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app_landing',
+    'app_blog'
 ]
 
 MIDDLEWARE = [
@@ -50,11 +52,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'sclassdev.urls'
+import os
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'src', 'sclassdev', 'app_landing', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,6 +69,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'sclassdev.wsgi.application'
 
